@@ -20,7 +20,7 @@ osio {
             -P openshift-it"
     
     build resources: resources
-    spawn commands: integrationTestCmd
+    spawn commands: integrationTestCmd, image: 'java', version: "1.0.${env.BUILD_NUMBER}"
     
 
   }
