@@ -19,7 +19,8 @@ osio {
             -Dit.test=*IT -DfailIfNoTests=false -DenableImageStreamDetection=true \
             -P openshift-it"
     
-    build resources: resources, commands: integrationTestCmd
+    build resources: resources
+    spawn commands: integrationTestCmd
     
 
   }
