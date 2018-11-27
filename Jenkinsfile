@@ -12,7 +12,7 @@ osio {
     def resources = processTemplate(params: [
           release_version: "1.0.${env.BUILD_NUMBER}"
     ])
-    integrationTestCmd = "mvn clean verify -Dnamespace.use.current=false -Dnamespace.use.existing=${utils.usersNamespace()} -Popenshift,openshift-it" 
+    integrationTestCmd = "mvn clean verify -Dnamespace.use.existing=${utils.usersNamespace()} -Popenshift,openshift-it" 
     build resources: resources
     spawn commands: integrationTestCmd, image: 'java'
     
