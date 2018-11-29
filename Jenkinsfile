@@ -13,8 +13,8 @@ osio {
           release_version: "1.0.${env.BUILD_NUMBER}"
     ])
     integrationTestCmd = "mvn clean verify -Dnamespace.use.existing=${utils.usersNamespace()} -Popenshift,openshift-it" 
-    build resources: resources
-    //spawn commands: integrationTestCmd, image: 'java'
+    //build resources: resources
+    spawn commands: integrationTestCmd, image: 'java'
     
 
   }
